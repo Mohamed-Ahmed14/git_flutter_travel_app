@@ -252,12 +252,13 @@ Future<void> firebaseResetPassword() async{
     emit(GoogleSignInLoadingState());
 
     // Trigger the authentication flow
+
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    if(googleUser == null)
-    {
-      print("no sign up");
-      return;
-    }
+    // if(googleUser == null)
+    // {
+    //   print("no sign up");
+    //   return;
+    // }
 
 
     // Obtain the auth details from the request
