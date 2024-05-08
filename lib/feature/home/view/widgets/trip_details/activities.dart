@@ -12,9 +12,10 @@ class ActivitiesWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.check,color: AppColor.green,),
-        SizedBox(width: 5,),
-        Expanded(child: CustomText(text:activity ?? "", color: AppColor.grey)),
+        Icon(Icons.check,color: AppColor.green,size: 30.w,),
+        SizedBox(width: 0.01.sw,),
+        Expanded(child: CustomText(text:activity ?? "", color: AppColor.grey,
+        fontSize: 16.sp,)),
       ],
     );
   }

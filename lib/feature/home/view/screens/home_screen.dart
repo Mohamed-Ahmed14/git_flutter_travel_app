@@ -23,12 +23,11 @@ class HomeScreen extends StatelessWidget {
       body:SingleChildScrollView(
         child: Column(
           children: [
-
+            SizedBox(height: 0.01.sh,),
             HomeAppBar(),          //AppBar
-            SizedBox(height: 20,),
+            SizedBox(height: 0.02.sh,),
             ShowSlider(),         //Slider
-            SizedBox(height: 20,),
-            SizedBox(height: 20,),
+            SizedBox(height: 0.05.sh,),
             AncientSection(),     //Ancient  Destinations
             ModernSection(),     //Modern  Destinations
             SpecialSection(), //Special  Destinations

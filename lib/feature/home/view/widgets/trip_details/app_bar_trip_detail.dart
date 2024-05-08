@@ -12,7 +12,7 @@ class AppBarTripDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(15.0),
+      padding:  EdgeInsets.all(15.0.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,15 +21,15 @@ class AppBarTripDetail extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-              width: 45,
-              height: 45,
+              width: 45.w,
+              height: 45.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColor.grey,
               ),
               child: Icon(Icons.arrow_back_outlined,
                 color: AppColor.white,
-                size: 25,),
+                size: 25.r,),
             ),
           ),
           BlocBuilder<FavouriteCubit,FavouriteState>(
@@ -54,8 +54,8 @@ class AppBarTripDetail extends StatelessWidget {
                   cubit.getFavourite();
                 },
                 child: Container(
-                  width: 45,
-                  height: 45,
+                  width: 45.w,
+                  height: 45.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppColor.grey,

@@ -14,7 +14,7 @@ class ShowActivity extends StatelessWidget {
       return ActivitiesWidget(activity:
       HomeCubit.get(context).tripModel?.activities?[index]);
     },separatorBuilder: (context, index) {
-      return SizedBox(height: 5,);
+      return SizedBox(height: 0.01.sh,);
     },
     itemCount: HomeCubit.get(context).tripModel?.activities?.length ?? 0,);
   }

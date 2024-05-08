@@ -22,29 +22,31 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.backGround,
       body: Padding(
-        padding:  EdgeInsets.all(15),
+        padding:  EdgeInsets.all(15.w),
         child:SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 0.05.sh,),
               LogoWidget(),
               //Login Text
               CustomText(text:"Login",
                 color:AppColor.grey,
-                fontSize: 24,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.bold,),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.01.sh,),
               //Login Form
               LoginFormWidget(),
-              SizedBox(height: 20,),
+              SizedBox(height: 0.05.sh,),
               //Login with Google
               CustomText(
                   text:"Or login with",
                   color: AppColor.grey),
+              SizedBox(height: 0.01.sh,),
               CustomElevatedButton(
                 child: Image.network(
-                    fit: BoxFit.cover,height: 40,width: 150,
+                    fit: BoxFit.cover,height: 40.h,width: 150.h,
                     "https://cdn.freebiesupply.com/logos/thumbs/2x/google-1-1-logo.png"),
                 onPressed:(){
                   print("Login with google");
@@ -55,9 +57,9 @@ class LoginScreen extends StatelessWidget {
                   });
                 },
                 backgroundColor: AppColor.blueGreyDark,
-                width: 340,
-                height: 45,
-                padding: 2,
+                width: 340.w,
+                height: 45.h,
+                padding: 2.w,
 
               ),
               //Sign Up
@@ -74,9 +76,9 @@ class LoginScreen extends StatelessWidget {
                       AuthCubit.get(context).reset();
                       Navigator.pushNamedAndRemoveUntil(context, "signUp", (route) => false);
                     },
-                    height: 25,
-                    width: 80,
-                    padding: 1,),
+                    height: 25.h,
+                    width: 45.w,
+                    padding: 1.w,),
                 ],
               ),
 

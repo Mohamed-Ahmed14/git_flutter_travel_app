@@ -50,12 +50,12 @@ class _AcountScreenState extends State<AccountScreen> {
                       children: [
                         Container(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          height: 240,
-                          width: double.infinity,
+                          height: 240.h,
+                          width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
                               color: AppColor.foreGround,
                               borderRadius: BorderRadius.vertical(
-                                  bottom: Radius.elliptical(180, 60)
+                                  bottom: Radius.elliptical(180.w, 60.h)
                               )
                           ),
                           child:cubit.isEditPressed?
@@ -63,12 +63,12 @@ class _AcountScreenState extends State<AccountScreen> {
                             children: [
                               IconButton(onPressed: (){
                                   cubit.changeFormStatus();
-                              }, icon: Icon(Icons.arrow_back_outlined,color: Colors.white,size: 30,)),
-                              SizedBox(width: 80,),
+                              }, icon: Icon(Icons.arrow_back_outlined,color: Colors.white,size: 30.r,)),
+                              SizedBox(width: 0.1.sw,),
                               Text("Update",style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 35
+                                  fontSize: 24.sp
                               ),),
                             ],
                           )):
@@ -76,12 +76,12 @@ class _AcountScreenState extends State<AccountScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              SizedBox(width: 120,),
+                              SizedBox(width: 0.1.sw,),
                               Expanded(
                                 child: Text("Profile",style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 35
+                                    fontSize: 24.sp
                                 ),),
                               ),
                               IconButton(
@@ -92,23 +92,23 @@ class _AcountScreenState extends State<AccountScreen> {
                                     Navigator.pushNamedAndRemoveUntil(context, "login",(route) => false,);
                                   });
                                 },
-                                icon:Icon(Icons.login_outlined,color: Colors.white,size: 35,)),
-                              SizedBox(width: 10,),
+                                icon:Icon(Icons.login_outlined,color: Colors.white,size: 35.r,)),
+                              SizedBox(width: 0.05.sw,),
                             ],
                           ),
                         ),
                         PositionedDirectional(
-                          bottom: -75,
-                          start: (MediaQuery.of(context).size.width/2 - 80),
+                          bottom: -60.h,
+                          start: 0.3.sw,
                           child: Container(
-                            height: 160,
-                            width: 160,
+                            height: 160.h,
+                            width: 160.w,
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                border: Border.all(width: 5,color: Colors.white),
+                                border: Border.all(width: 2.w,color: Colors.white),
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.contain,
                                   image: Image.asset("assets/images/logo.jpg",).image,
                                 )
                             ),
@@ -117,17 +117,17 @@ class _AcountScreenState extends State<AccountScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 75,),
+                    SizedBox(height: 0.1.sh,),
                             
                     ProfileForm(),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 0.01.sh,),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: AppColor.foreGround,
                           foregroundColor:AppColor.white,
-                          fixedSize: Size(320,45),
+                          fixedSize: Size(320.w,45.h),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                           )
                       ),
                       onPressed:(){
@@ -140,13 +140,14 @@ class _AcountScreenState extends State<AccountScreen> {
                       child:cubit.isEditPressed?
                       Text("Update",style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 16.sp,
                       ),):
                       Text("Edit Profile",style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 16.sp,
                       ),),
                     ),
+                    SizedBox(height: 0.05.sh,)
                             
                   ],
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/colors/colors.dart';
 import 'package:travel_app/core/custom_text.dart';
 import 'package:travel_app/feature/booking/view_model/cubit/cubit.dart';
@@ -25,7 +26,7 @@ class SingleTripDetails extends StatelessWidget {
         ),
         centerTitle: true,
         title: CustomText(text: "Trip Details",color: AppColor.foreGround,
-        fontSize: 20,fontWeight: FontWeight.bold,),
+        fontSize: 20.sp,fontWeight: FontWeight.bold,),
       ),
       body: SingleChildScrollView(
         child: BlocBuilder<BookingCubit,BookingState>(
@@ -33,48 +34,52 @@ class SingleTripDetails extends StatelessWidget {
             var cubit = BookingCubit.get(context);
             return Column(
               children: [
-                Image.asset(cubit.singleOrder?.destination_image ?? "",height: 120,
-                width:double.infinity,fit: BoxFit.fill,),
+                Image.asset(cubit.singleOrder?.destination_image ?? "",height: 120.h,
+                width:MediaQuery.of(context).size.width,fit: BoxFit.fill,),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding:  EdgeInsets.all(15.0.w),
                   child: Column(
                     children: [
-                      SizedBox(height: 8,),
+                      SizedBox(height: 0.01.sh,),
                       Row(
                         children: [
                           CustomText(text:"Destination: ",
-                            color:AppColor.foreGround,fontSize: 18,fontWeight: FontWeight.w800,),
+                            color:AppColor.foreGround,fontSize: 18.sp,fontWeight: FontWeight.w800,),
                           CustomText(text:"${cubit.singleOrder?.destination_name}",
-                            color:AppColor.grey,fontSize: 18,fontWeight: FontWeight.w600,),
+                            color:AppColor.grey,fontSize: 18.sp,fontWeight: FontWeight.w600,),
                         ],
                       ), //Destiantio
                       Row(
                         children: [
                           CustomText(text:"Price: ",
-                            color:AppColor.foreGround,fontSize: 16,fontWeight: FontWeight.w800,),
+                            color:AppColor.foreGround,fontSize: 16.sp,fontWeight: FontWeight.w800,),
                           Expanded(
                             child: CustomText(text:"${cubit.singleOrder?.destination_price ?? 0}\$",
-                              color:AppColor.grey,fontSize: 16,fontWeight: FontWeight.w600,),
+                              color:AppColor.grey,fontSize: 16.sp,fontWeight: FontWeight.w600,),
                           ),
-                          CustomText(text:"Days: ", color: AppColor.foreGround),
-                          CustomText(text: "${cubit.singleOrder?.days ?? ""}", color: AppColor.grey),
+                          CustomText(text:"Days: ", color: AppColor.foreGround,fontSize: 16.sp,),
+                          CustomText(text: "${cubit.singleOrder?.days ?? ""}",
+                              fontSize:16.sp,color: AppColor.grey),
                         ],
                       ), //Price
-                      SizedBox(height: 8,),
+                      SizedBox(height: 0.02.sh,),
                       SingleOrderForm(),
-                      SizedBox(height: 8,),
+                      SizedBox(height: 0.02.sh,),
                       Row(
                         children: [
                           CustomText(text:"No.of Tickets: ",
-                            color:AppColor.foreGround,),
-                          CustomText(text: "${cubit.singleOrder?.no_tickets??1}", color: AppColor.grey),
+                            color:AppColor.foreGround,fontSize: 16.sp,),
+                          CustomText(text: "${cubit.singleOrder?.no_tickets??1}",
+                              color: AppColor.grey,fontSize: 16.sp,),
                         ],
                       ),
+                      SizedBox(height: 0.02.sh,),
                       Row(
                         children: [
                           CustomText(text: "Total Price: ",color: AppColor.foreGround,
-                            fontSize: 18,),
-                          CustomText(text: "${cubit.singleOrder?.total_price}\$",color: AppColor.grey,),
+                            fontSize: 16.sp,),
+                          CustomText(text: "${cubit.singleOrder?.total_price}\$",
+                            fontSize: 16.sp,color: AppColor.grey,),
 
                         ],
                       ),

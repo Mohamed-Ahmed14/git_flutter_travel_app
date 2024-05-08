@@ -24,7 +24,7 @@ class RegisterFormWidget extends StatelessWidget {
           children: [
             CustomText(text:"Name",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -36,10 +36,10 @@ class RegisterFormWidget extends StatelessWidget {
               validator: cubit.nameValidator,
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 0.01.sh,),
             CustomText(text:"Email",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -51,10 +51,11 @@ class RegisterFormWidget extends StatelessWidget {
               validator: cubit.emailValidator,
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 0.01.sh,),
+
             CustomText(text:"Password",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -75,10 +76,10 @@ class RegisterFormWidget extends StatelessWidget {
               validator: cubit.passwordValidator,
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 0.01.sh,),
             CustomText(text:"Confirmed Password",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -99,31 +100,33 @@ class RegisterFormWidget extends StatelessWidget {
               validator: cubit.ConPasswordValidator,
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
-            SizedBox(height: 20,),
-            CustomElevatedButton(
-              child:CustomText(
-                text: "Sign Up",
-                color: AppColor.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-              ),
-              onPressed:(){
-                if(cubit.registerFormKey.currentState!.validate())
-                {
-                  print("Sign up pressed");
-                  cubit.obscureText=true;
-                  cubit.confObscureText = true;
-                  cubit.firebaseSignUp().then((value){
-                    Navigator.pushNamedAndRemoveUntil(context,
-                        "login", (route) => false);
-                  });
-                }
+            SizedBox(height: 0.05.sh,),
+            Center(
+              child: CustomElevatedButton(
+                child:CustomText(
+                  text: "Sign Up",
+                  color: AppColor.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.sp,
+                ),
+                onPressed:(){
+                  if(cubit.registerFormKey.currentState!.validate())
+                  {
+                    print("Sign up pressed");
+                    cubit.obscureText=true;
+                    cubit.confObscureText = true;
+                    cubit.firebaseSignUp().then((value){
+                      Navigator.pushNamedAndRemoveUntil(context,
+                          "login", (route) => false);
+                    });
+                  }
 
-              },
-              backgroundColor: AppColor.foreGround,
-              height: 45,
-              width: 340,
-              padding: 8,
+                },
+                backgroundColor: AppColor.foreGround,
+                height: 45.h,
+                width: 360.w,
+                padding: 0.0001.w,
+              ),
             ),
 
           ],

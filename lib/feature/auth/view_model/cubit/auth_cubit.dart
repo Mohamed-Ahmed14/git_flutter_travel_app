@@ -297,6 +297,17 @@ Future<void> firebaseResetPassword() async{
   }
 
 
+  User? getUserCurrentState(){
+   User? user = FirebaseAuth.instance.currentUser;
+   if(user == null){
+     print("signed out");
+   }else{
+     print("signed in");
+   }
+   return user;
+  }
+
+
 
   CollectionReference account = FirebaseFirestore.instance.
   collection(FireStoreKeys.account);

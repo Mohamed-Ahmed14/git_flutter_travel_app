@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:travel_app/feature/auth/view/screens/login_screen.dart';
+
 
 import '../../../../core/colors/colors.dart';
-import '../../../../core/custom_elevated_button.dart';
+
 import '../../../../core/custom_text.dart';
 import '../../../../core/custom_text_button.dart';
-import '../../../../core/custom_text_form_field.dart';
+
 import '../../view_model/cubit/auth_cubit.dart';
-import '../../view_model/cubit/auth_state.dart';
+
 import '../widgets/logo_widget.dart';
 import '../widgets/register_form_widget.dart';
 
@@ -27,32 +27,36 @@ class RegisterScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 0.05.sh,),
                   LogoWidget(),
                   //Sign up Text
                   CustomText(text:"Sign Up",
                     color:AppColor.grey,
-                    fontSize: 24,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.bold,),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 0.01.sh,),
                   //Sign Up Form
                   RegisterFormWidget(),
+                  SizedBox(height: 0.01.sh,),
                   //Login
                   Row(
                     children: [
                       CustomText(text:"Already have an account? ",
-                          color: AppColor.grey),
+                          color: AppColor.grey,
+                      fontSize: 14.sp,),
                       CustomTextButton(child:CustomText(
                         text: "Login",
                         color: AppColor.foreGround,
+                        fontSize: 14.sp,
                       ),
                         onPressed:(){
                           print("Login");
                           AuthCubit.get(context).reset();
                           Navigator.pushNamedAndRemoveUntil(context, "login", (route) => false);
                         },
-                        height: 25,
-                        width: 80,
-                        padding: 1,),
+                        height: 25.h,
+                        width: 45.w,
+                        padding: 1.w,),
                     ],
                   ),
 

@@ -45,31 +45,31 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(
               color: borderColor,
-              width: 2
+              width: 2.w
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(
               color: borderColor,
-                width: 2
+                width: 2.w
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(
               color: borderColor,
-                width: 2
+                width: 2.w
             ),
           ),
 
           labelText: label,
           labelStyle: TextStyle(
             color: labelColor,
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w400,
           ),
           floatingLabelBehavior: floatingLabelBehavior,
@@ -78,20 +78,20 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hint,
           hintStyle: TextStyle(
           color: hintColor,
-          fontSize: 16,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w400,
         ),
 
           filled: filled,
           fillColor: filledColor,
 
-          contentPadding: EdgeInsets.all(8),
+          contentPadding: EdgeInsets.all(8.w),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           enabled: enabled,
         ),
       style: TextStyle(
-        fontSize: 16
+        fontSize: 16.sp
       ),
 
       readOnly: readOnly,

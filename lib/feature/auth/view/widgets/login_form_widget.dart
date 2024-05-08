@@ -27,7 +27,7 @@ class LoginFormWidget extends StatelessWidget {
           children: [
             CustomText(text:"Email",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -39,10 +39,10 @@ class LoginFormWidget extends StatelessWidget {
               validator: cubit.emailValidator,
               floatingLabelBehavior: FloatingLabelBehavior.never,
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 0.01.sh,),
             CustomText(text:"Password",
               color: AppColor.deepBlue,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,),
             CustomTextFormField(
               filled: true,
@@ -68,25 +68,25 @@ class LoginFormWidget extends StatelessWidget {
               alignment: AlignmentDirectional.topEnd,
               child: CustomTextButton(
                 child:CustomText(
-                  text: "Forget password?",
+                  text: "Forget password ?",
                   color: AppColor.grey,
-                  fontSize: 14,
+                  fontSize: 13.sp,
                 ),
                 onPressed:(){
                   print("Forget password");
                   cubit.firebaseResetPassword();
                 },
-                width: 135,
-                height: 20,
+                width: 135.w,
+                height: 45.h,
                 backgroundColor: AppColor.backGround,),
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 0.005.sh,),
             CustomElevatedButton(
               child:CustomText(
                 text: "Login",
                 color: AppColor.grey,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 18.sp,
               ),
               onPressed:(){
                 if(cubit.loginFormKey.currentState!.validate())
@@ -102,9 +102,9 @@ class LoginFormWidget extends StatelessWidget {
                 }
               },
               backgroundColor: AppColor.foreGround,
-              height: 45,
-              width: 340,
-              padding: 2,
+              height: 45.h,
+              width: 340.w,
+              padding: 0.0001.w,
             ),
           ],
         ));

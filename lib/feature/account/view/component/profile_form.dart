@@ -11,11 +11,11 @@ class ProfileForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(15),
-        margin: EdgeInsets.all(15),
+        padding: EdgeInsets.all(15.w),
+        margin: EdgeInsets.all(15.w),
         decoration: BoxDecoration(
           color:AccountCubit.get(context).formColor,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
         child: Form(
           key: AccountCubit.get(context).accountKey,
@@ -34,7 +34,7 @@ class ProfileForm extends StatelessWidget {
                         color: Colors.grey[800]!
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: EdgeInsets.all(5.w),
                   labelText: "name",
                   labelStyle: TextStyle(color: AppColor.backGround),
                   alignLabelWithHint: true,
@@ -46,7 +46,7 @@ class ProfileForm extends StatelessWidget {
                 cursorColor: AppColor.backGround,
                 controller: AccountCubit.get(context).nameController,
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.02.sh,),
               TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -60,7 +60,7 @@ class ProfileForm extends StatelessWidget {
                         color: Colors.grey[800]!
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: EdgeInsets.all(5.w),
                   labelText: "email",
                   labelStyle: TextStyle(color: AppColor.backGround),
                   alignLabelWithHint: true,
@@ -73,7 +73,7 @@ class ProfileForm extends StatelessWidget {
                 cursorColor: AppColor.backGround,
                 controller: AccountCubit.get(context).emailController,
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.02.sh,),
               TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -87,7 +87,7 @@ class ProfileForm extends StatelessWidget {
                         color: Colors.grey[800]!
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: EdgeInsets.all(5.w),
                   labelText: "phone",
                   labelStyle: TextStyle(color: AppColor.backGround),
                   alignLabelWithHint: true,
@@ -99,7 +99,7 @@ class ProfileForm extends StatelessWidget {
                 cursorColor: AppColor.backGround,
                 controller: AccountCubit.get(context).phoneController,
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.02.sh,),
               TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -113,7 +113,7 @@ class ProfileForm extends StatelessWidget {
                         color: Colors.grey[800]!
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: EdgeInsets.all(5.w),
                   labelText: "city",
                   labelStyle: TextStyle(color: AppColor.backGround),
                   alignLabelWithHint: true,
@@ -125,7 +125,7 @@ class ProfileForm extends StatelessWidget {
                 cursorColor: AppColor.backGround,
                 controller: AccountCubit.get(context).cityController,
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.02.sh,),
               TextFormField(
 
                 decoration: InputDecoration(
@@ -140,7 +140,7 @@ class ProfileForm extends StatelessWidget {
                         color: Colors.grey[800]!
                     ),
                   ),
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: EdgeInsets.all(5.w),
                   labelText: "address",
                   labelStyle: TextStyle(color: AppColor.backGround),
                   alignLabelWithHint: true,
@@ -153,7 +153,7 @@ class ProfileForm extends StatelessWidget {
                 controller: AccountCubit.get(context).addressController,
 
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 0.02.sh,),
             ],
           ),
         ),

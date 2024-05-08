@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/colors/colors.dart';
 import 'package:travel_app/core/custom_text.dart';
 import 'package:travel_app/feature/booking/view/widgets/trip_widget.dart';
@@ -32,16 +33,17 @@ class _TripsScreenState extends State<TripsScreen> {
             visible: cubit.ordersList.isNotEmpty,
             replacement: Center(child: CustomText(
               text: "No Trips",color: AppColor.grey,
-              fontSize: 20,fontWeight: FontWeight.bold,
+              fontSize: 20.sp,fontWeight: FontWeight.bold,
             ),),
             child: SingleChildScrollView(
               child: SafeArea(
                 child: Column(
                   children: [
+                    SizedBox(height: 0.01.sh,),
                     CustomText(text:"Your Trips",
-                      color: AppColor.foreGround,fontSize: 20,
+                      color: AppColor.foreGround,fontSize: 20.sp,
                       fontWeight: FontWeight.bold,),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 0.05.sh,),
                     ListView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),

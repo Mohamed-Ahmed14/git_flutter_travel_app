@@ -14,7 +14,7 @@ class HomeAppBar extends StatelessWidget{
     return AppBar(
       backgroundColor: AppColor.backGround,
       leading: CustomText(text: "",color: AppColor.transparent,),
-      leadingWidth: 5,
+      leadingWidth: 5.w,
       title:Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,13 +25,13 @@ class HomeAppBar extends StatelessWidget{
                   color: AppColor.foreGround);
             },
           ),
-          CustomText(text: "Want to discover a new destination?",
-              color: AppColor.grey,fontSize: 15,),
+          CustomText(text: "Where are you going today ?",
+              color: AppColor.grey,fontSize: 14.sp,),
         ],
       ),
       actions: [
         CircleAvatar(
-          radius: 40,
+          radius: 40.r,
           backgroundImage:Image.asset("assets/images/logo.jpg",).image,
 
         )

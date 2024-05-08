@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/feature/favourite/view_model/cubit/cubit.dart';
 
 import '../../../../core/colors/colors.dart';
@@ -18,10 +19,10 @@ class FavouriteWidget extends StatelessWidget {
       alignment: AlignmentDirectional.center,
       children: [
         Container(
-          height: 180,
-          width: 320,
+          height: 180.h,
+          width: 320.w,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
             border: Border.all(color: AppColor.foreGround),
             image: DecorationImage(
               fit: BoxFit.fill,
@@ -31,13 +32,13 @@ class FavouriteWidget extends StatelessWidget {
         ),
 
         PositionedDirectional(
-          end: 25,
-          top: 10,
+          end: 25.w,
+          top: 10.h,
           child: Column(
             children: [
               IconButton(
                 icon:Icon(Icons.favorite_outlined,
-                color:AppColor.foreGround),
+                color:AppColor.foreGround,size: 30.r,),
                 onPressed: (){
                    var cubit = FavouriteCubit.get(context);
                   // for(var i in cubit.favouriteList)
@@ -53,7 +54,7 @@ class FavouriteWidget extends StatelessWidget {
               ),
               CustomText(text: favouriteModel[FireStoreKeys.destination_name] ?? "",
                 color: AppColor.foreGround,
-                fontSize: 24,fontWeight: FontWeight.bold,),
+                fontSize: 24.sp,fontWeight: FontWeight.bold,),
             ],
           ),
         )

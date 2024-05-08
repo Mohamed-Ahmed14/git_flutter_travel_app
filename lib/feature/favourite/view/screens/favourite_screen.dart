@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/colors/colors.dart';
 import 'package:travel_app/core/custom_text.dart';
 import 'package:travel_app/feature/favourite/view_model/cubit/cubit.dart';
@@ -43,13 +44,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             visible: cubit.favouriteList.isNotEmpty,
               replacement: Center(child: CustomText(
                 text: "No Favourite Destinations",color: AppColor.grey,
-                fontSize: 20,fontWeight: FontWeight.bold,
+                fontSize: 20.sp,fontWeight: FontWeight.bold,
               ),),
               child: ListView.separated(itemBuilder: (context, index) {
                 return FavouriteWidget(favouriteModel:
                 cubit.favouriteList[index]);
               },separatorBuilder: (context, index) {
-                return SizedBox(height: 10,);
+                return SizedBox(height: 0.05.sh,);
               },
               itemCount: cubit.favouriteList.length,));
         },

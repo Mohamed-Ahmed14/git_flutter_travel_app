@@ -9,29 +9,32 @@ class LogoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        Center(child: Container(
-            height: 160,
-            width: 160,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  opacity:0.7,
-                  image: Image.asset("assets/images/logo.jpg",).image,
-                )
-            )
-        ),),
-        PositionedDirectional(
-          bottom: 5,
-          child: CustomText(text:"TRAVIA",
-            color: AppColor.foreGround,
-            fontWeight:FontWeight.bold,
-            fontSize: 24,),
-        ),
-      ],
+    return Center(
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          Center(child: Container(
+              height: 160.h,
+              width: 160.w,
+              decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(90.r),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    opacity:0.7,
+                    image: Image.asset("assets/images/logo.jpg",).image,
+                  )
+              )
+          ),),
+          PositionedDirectional(
+            bottom: 3.h,
+            child: CustomText(text:"TRAVIA",
+              color: AppColor.foreGround,
+              fontWeight:FontWeight.bold,
+              fontSize: 18.sp,),
+          ),
+        ],
+      ),
     );
   }
 }

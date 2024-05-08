@@ -8,13 +8,14 @@ import 'package:travel_app/feature/account/view_model/cubit/cubit.dart';
 import 'package:travel_app/feature/auth/view/screens/login_screen.dart';
 import 'package:travel_app/feature/auth/view/screens/register_screen.dart';
 import 'package:travel_app/feature/auth/view_model/cubit/auth_cubit.dart';
-import 'package:travel_app/feature/layout/view/screens/layout_screen.dart';
+import 'package:travel_app/feature/home/view/screens/home_screen.dart';
 import 'package:travel_app/feature/layout/view_model/layout_cubit/layout_cubit.dart';
 
 import 'feature/auth/view_model/data/local/shared_helper.dart';
 import 'feature/booking/view_model/cubit/cubit.dart';
 import 'feature/favourite/view_model/cubit/cubit.dart';
 import 'feature/home/view/screens/destination_details_screen.dart';
+import 'feature/splash/splash_home.dart';
 import 'feature/splash/splash_screen.dart';
 import 'feature/view_model/cubit/cubit.dart';
 import 'firebase_options.dart';
@@ -35,13 +36,21 @@ void main() async{
       BlocProvider(create: (context) => BookingCubit(),),
 
     ],
-    child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      routes: {
-        "signUp":(context) => RegisterScreen(),
-        "login":(context) => LoginScreen(),
+    child: ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return  MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: child,
+          routes: {
+            "signUp":(context) => RegisterScreen(),
+            "login":(context) => LoginScreen(),
+          },
+        );
       },
+      child: SplashHomeScreen(),
     )
   ));
 }

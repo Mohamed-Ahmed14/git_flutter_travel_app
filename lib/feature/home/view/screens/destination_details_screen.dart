@@ -31,9 +31,9 @@ class DestinationDetailsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     ImageSlider(), //Images
-                    SizedBox(height: 10,),
+                    SizedBox(height: 0.01.sh,),
                     ShowDetail(),
-                    SizedBox(height: 60,),
+                    SizedBox(height: 60.h,),
 
                   ],
                 ),
@@ -45,14 +45,17 @@ class DestinationDetailsScreen extends StatelessWidget {
                     CustomElevatedButton(
                       backgroundColor: AppColor.foreGround,
                         child: CustomText(text: "Book Now!",color: AppColor.grey,
-                        fontSize: 24,fontWeight: FontWeight.bold,),
+                        fontSize: 20.sp,fontWeight: FontWeight.bold,),
+                        height: 45.h,
+                        width: 340.w,
+                        padding: 0.1.w,
                         onPressed:(){
                         BookingCubit.get(context).setDestination(
                           HomeCubit.get(context).tripModel!
                         );
                         Navigator.push(context, MaterialPageRoute(builder: (context) => BookingScreen(),));
                         }),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 0.01.sh,),
                   ],
                 ),
               ),

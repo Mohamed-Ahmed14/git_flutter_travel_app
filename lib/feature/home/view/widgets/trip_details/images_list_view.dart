@@ -17,18 +17,18 @@ class ImagesListView extends StatelessWidget {
           alignment: AlignmentDirectional.center,
           children: [
             SizedBox(
-              height:245 ,
+              height:245.h ,
               child: PageView.builder(
                 controller: cubit.imageController,
                 itemBuilder: (context, index) {
                     return  Image.asset(cubit.tripModel?.imagesList?[index] ?? "",
-                      fit: BoxFit.fill,height: 245,width: double.infinity,);
+                      fit: BoxFit.fill,height: 245.h,width: MediaQuery.of(context).size.width,);
                 },itemCount: cubit.tripModel?.imagesList?.length,
 
               ),
             ),
             PositionedDirectional(
-              bottom: 10,
+              bottom: 10.h,
               child: Align(alignment: AlignmentDirectional.center,
                 child: Visibility(
                   visible: (cubit.tripModel?.imagesList?.length ?? 0) > 1,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/feature/booking/view_model/cubit/cubit.dart';
 
 import '../../../../core/colors/colors.dart';
@@ -20,7 +21,7 @@ class SingleOrderForm extends StatelessWidget {
           readOnly: true,
           showCursor: false,
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: 0.02.sh,),
         CustomTextFormField(
           label: "Email",
           prefixIcon: Icon(Icons.email_rounded,color: AppColor.foreGround,),
@@ -30,7 +31,7 @@ class SingleOrderForm extends StatelessWidget {
           readOnly: true,
           showCursor: false,
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: 0.02.sh,),
         CustomTextFormField(
           label: "Phone",
           prefixIcon: Icon(Icons.phone,color: AppColor.foreGround,),
@@ -40,7 +41,7 @@ class SingleOrderForm extends StatelessWidget {
           readOnly: true,
           showCursor: false,
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: 0.02.sh,),
         CustomTextFormField(
           label: "City",
           prefixIcon: Icon(Icons.location_city_rounded,color: AppColor.foreGround,),
@@ -50,7 +51,7 @@ class SingleOrderForm extends StatelessWidget {
           readOnly: true,
           showCursor: false,
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: 0.02.sh,),
         CustomTextFormField(
           label: "Date",
           prefixIcon: Icon(Icons.date_range_outlined,color: AppColor.foreGround,),

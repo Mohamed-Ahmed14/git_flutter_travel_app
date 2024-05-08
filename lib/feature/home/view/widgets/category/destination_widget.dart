@@ -20,23 +20,25 @@ class DestinationWidget extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => DestinationDetailsScreen(),));
       },
       child: Container(
-        height: 180,
-        width: 320,
-        padding: EdgeInsetsDirectional.all(10),
+        height: 201.h,
+        width: 320.w,
+        padding: EdgeInsetsDirectional.all(10.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: Column(
           children: [
-            SizedBox(height: 5,),
+            SizedBox(height: 0.001.sh,),
             Image.asset(destinationModel.imagesList?[0] ?? "",
-              height: 120,fit: BoxFit.fill,
-              width:340,),
+              height: 120.h,fit: BoxFit.fill,
+              width:340.w,),
             Row(
               children: [
-                Expanded(child: CustomText(text: destinationModel.name ?? "", color: AppColor.grey)),
+                Expanded(child: CustomText(text: destinationModel.name ?? "",
+                    color: AppColor.grey,fontSize: 14.sp,)),
                 Icon(Icons.location_city_outlined,color: AppColor.yellow,),
-                CustomText(text: "${destinationModel.days} days", color: AppColor.grey),
+                CustomText(text: "${destinationModel.days} days",
+                    fontSize:14.sp,color: AppColor.grey),
               ],
             ),
           ],

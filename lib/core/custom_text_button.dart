@@ -8,17 +8,17 @@ class CustomTextButton extends StatelessWidget {
   final Widget child;
   final Color? backgroundColor;
   final Color? foregroundColor;
-  final double width;
-  final double height;
-  final double padding;
+  final double? width;
+  final double? height;
+  final double? padding;
   final Color borderColor;
-  final double borderRadius;
+  final double? borderRadius;
   const CustomTextButton({
-    this.borderRadius = 10,
+    this.borderRadius,
     this.borderColor = AppColor.transparent,
-    this.padding = 10,
-    this.width = 320,
-    this.height = 50,
+    this.padding,
+    this.width,
+    this.height,
     this.backgroundColor,
     this.foregroundColor,
     required this.child,
@@ -32,13 +32,13 @@ class CustomTextButton extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
         foregroundColor: foregroundColor,
-        fixedSize: Size(width, height),
-        padding: EdgeInsets.all(padding),
+        fixedSize: Size(width??50.w, height??50.h),
+        padding: EdgeInsets.all(padding??1.w),
         shape: RoundedRectangleBorder(
           side: BorderSide(
             color: borderColor,
           ),
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: BorderRadius.circular(borderRadius??10.r),
         ),
       ),
     );

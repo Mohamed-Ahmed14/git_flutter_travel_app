@@ -23,14 +23,14 @@ class CategoryWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
+          padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
           child: SizedBox(
-            height: 36,
+            height: 36.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomText(text:"${text} Destinations", color:AppColor.foreGround,
-                fontWeight: FontWeight.w800,fontSize: 18,),
+                fontWeight: FontWeight.w800,fontSize: 16.sp,),
                 IconButton(onPressed:(){
                   HomeCubit.get(context).showCategory(category);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryScreen(),));
@@ -42,7 +42,7 @@ class CategoryWidget extends StatelessWidget {
         ),
 
         SizedBox(
-          height: 200,
+          height: 201.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder:(context, index) {

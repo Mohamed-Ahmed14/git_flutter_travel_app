@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/colors/colors.dart';
 import 'package:travel_app/core/custom_text.dart';
 import 'package:travel_app/feature/home/view/widgets/category/destination_widget.dart';
@@ -27,13 +28,13 @@ class DestinationScreen extends StatelessWidget {
                SingleChildScrollView(
                  child: Column(
                    children: [
-                     SizedBox(height: 50,),
+                     SizedBox(height: 0.1.sh,),
                      Visibility(
                        visible: cubit.searchController.text.trim().isEmpty || cubit.searchList.isNotEmpty,
                        replacement: Center(
                            child: CustomText(
                              text:"No Data Found" ,color: AppColor.grey,
-                             fontSize: 20,fontWeight: FontWeight.bold,)),
+                             fontSize: 20.sp,fontWeight: FontWeight.bold,)),
                        child: ListView.builder(
                          shrinkWrap: true,
                          physics: NeverScrollableScrollPhysics(),
@@ -49,7 +50,7 @@ class DestinationScreen extends StatelessWidget {
                    ],
                  ),
                ),
-                PositionedDirectional(top: 1,
+                PositionedDirectional(top: 10.h,
                   child: SearchWidget(),
                 ), //Search
               ],

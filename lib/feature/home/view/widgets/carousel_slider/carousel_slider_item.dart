@@ -15,7 +15,7 @@ class CarouselSliderItem extends StatelessWidget {
       alignment: AlignmentDirectional.center,
       children: [
       Container(
-      width: 320,
+      width: 320.w,
       foregroundDecoration: BoxDecoration(
         color: AppColor.grey.withOpacity(0.2),
       ),
@@ -29,7 +29,7 @@ class CarouselSliderItem extends StatelessWidget {
         CustomText(text:sliderModel?.type ?? "", color:
         AppColor.orange,
         fontWeight: FontWeight.bold,
-        fontSize: 24,),
+        fontSize: 24.sp,),
       ],
     );
   }

@@ -17,7 +17,7 @@ class ShowSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
         items: sliderList.map((e) => CarouselSliderItem(sliderModel: e,)).toList(),
-        options: CarouselOptions(height: 90,
+        options: CarouselOptions(height: 90.h,
             autoPlay: true,
             autoPlayAnimationDuration: Duration(seconds: 2),
             viewportFraction: 0.9

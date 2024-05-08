@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/colors/colors.dart';
 import 'package:travel_app/core/custom_text.dart';
 import 'package:travel_app/feature/home/view/widgets/category/destination_widget.dart';
@@ -31,7 +32,7 @@ class CategoryScreen extends StatelessWidget {
                 title: CustomText(
                   text:"${cubit.categoryName} Destinations",
                   color: AppColor.foreGround,
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w800,
                 ),
               ),
